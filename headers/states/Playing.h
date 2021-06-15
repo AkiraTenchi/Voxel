@@ -4,6 +4,7 @@
 #define VOXEL_PLAYING_H
 
 #include "GameState.h"
+#include "Model.h"
 
 class Application;
 
@@ -15,6 +16,9 @@ namespace State{
             void input() override;
             void update() override;
             void draw() override;
+
+        private:
+            Model m_model;
     };
 }
 

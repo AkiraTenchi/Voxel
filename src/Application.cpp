@@ -14,6 +14,7 @@ void Application::runMainGameLoop() {
     while(display::isOpen()){
         display::clear();
 
+        //get input calculate situation render situation
         m_states.top()->input();
         m_states.top()->update();
         m_states.top()->draw();
@@ -23,10 +24,12 @@ void Application::runMainGameLoop() {
     }
 }
 
+//changes current GameState by adding
 void Application::pushState(std::unique_ptr<State::GameState> state) {
     m_states.push(std::move(state));
 }
 
+//ends current game state returns to the one below
 void Application::popState() {
     m_states.pop();
 }

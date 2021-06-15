@@ -6,6 +6,7 @@
 int main() {
     display::init();
 
+    //create and start application
     Application app;
     app.runMainGameLoop();
 }
