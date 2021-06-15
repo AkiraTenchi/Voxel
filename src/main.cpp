@@ -1,16 +1,12 @@
 #include <iostream>
 
 #include "display.h"
+#include "Application.h"
 
 int main() {
-
     display::init();
 
-    while(display::isOpen()){
-        display::clear();
-        display::update();
-
-        display::checkForClose();
-    }
+    Application app;
+    app.runMainGameLoop();
 }
 
