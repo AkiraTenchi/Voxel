@@ -1,10 +1,11 @@
 #ifndef VOXEL_APPLICATION_H
 #define VOXEL_APPLICATION_H
 
+#include "states/GameState.h"
+
 #include <memory>
 #include <stack>
 
-#include "states/GameState.h"
 
 class Application{
     public:
