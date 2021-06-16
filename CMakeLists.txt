@@ -10,6 +10,6 @@ find_package(glm REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
-add_executable(Voxel_main src/main.cpp headers/display.h src/display.cpp headers/Application.h src/Application.cpp headers/states/GameState.h headers/states/Playing.h src/states/Playing.cpp src/states/GameState.cpp src/Model.cpp headers/Model.h)
+add_executable(Voxel_main src/main.cpp headers/display.h src/display.cpp headers/Application.h src/Application.cpp headers/states/GameState.h headers/states/Playing.h src/states/Playing.cpp src/states/GameState.cpp src/Model.cpp headers/Model.h headers/shaders/ShaderProg.h)
 
 target_link_libraries(Voxel_main sfml-audio sfml-graphics sfml-network sfml-system sfml-window glm OpenGL::GL GLEW::GLEW)

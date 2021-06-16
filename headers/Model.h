@@ -14,7 +14,12 @@ class Model{
         void unbind();
 
     private:
-        GLuint m_vertexID;
+        void addVBO(int dim, const std::vector<GLfloat>& data);
+
+        std::vector<GLuint> m_buffers;
+        GLuint m_vao = 0;
+
+        GLuint m_vboCount = 0;
 };
 
 #endif //VOXEL_MODEL_H

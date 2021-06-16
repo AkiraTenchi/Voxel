@@ -3,32 +3,45 @@
 #include "Model.h"
 
 Model::Model(const std::vector<GLfloat>& vertexPositions) {
-    glGenBuffers(1, &m_vertexID); //Creates ID
-    glBindBuffer(GL_ARRAY_BUFFER, m_vertexID);
+    glGenVertexArrays(1, &m_vao);
+    glBindVertexArray(m_vao);
 
-    //Write array to buffer
-    glBufferData(GL_ARRAY_BUFFER,
-                 vertexPositions.size() * sizeof(vertexPositions[0]),
-                 vertexPositions.data(),
-                 GL_STATIC_DRAW);
+    addVBO(2, vertexPositions);
 
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*) 0); //gives OpenGL information about the Array in the Buffer
-    glEnableVertexAttribArray(0);
-
+    unbind();
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
 //Destroy all buffers on life end of class
 Model::~Model() {
-    glDeleteBuffers(1, &m_vertexID);
+    glDeleteVertexArrays(1, &m_vao);
+    glDeleteBuffers(m_buffers.size(), m_buffers.data());
 }
 
 //set current ID
 void Model::bind() {
-    glBindBuffer(GL_ARRAY_BUFFER, m_vertexID);
+    glBindVertexArray(m_vao);
 }
 
 //reset ID ID -> 0
 void Model::unbind() {
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+}
+
+void Model::addVBO(int dim, const std::vector<GLfloat> &data) {
+    GLuint vbo;
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER,
+                 data.size() * sizeof(data[0]),
+                 data.data(),
+                 GL_STATIC_DRAW);
+    glVertexAttribPointer(m_vboCount,
+                          dim,
+                          GL_FLOAT,
+                          GL_FALSE,
+                          0,
+                          (GLvoid*) 0);
+    glEnableVertexAttribArray(m_vboCount++);
+    m_buffers.push_back(vbo);
 }
