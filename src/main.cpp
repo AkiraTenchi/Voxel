@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "display.h"
+#include "Display.h"
 #include "Application.h"
 
 int main() {
-    display::init();
+    Display::init();
 
     //create and start application
     Application app;

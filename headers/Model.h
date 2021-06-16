@@ -1,5 +1,3 @@
-// Created by akira on 15-06-21.
-
 #ifndef VOXEL_MODEL_H
 #define VOXEL_MODEL_H
 
@@ -8,7 +6,7 @@
 
 class Model{
     public:
-        Model(const std::vector<GLfloat>& vertexPositions);
+        explicit Model(const std::vector<GLfloat>& vertexPositions);
         ~Model();
         void bind();
         void unbind();

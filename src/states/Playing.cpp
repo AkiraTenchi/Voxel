@@ -1,7 +1,3 @@
-// Created by akira on 15-06-21.
-
-#include <iostream>
-
 #include "states/Playing.h"
 
 namespace State{

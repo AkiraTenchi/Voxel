@@ -1,7 +1,5 @@
-// Created by akira on 15-06-21.
-
 #include "Application.h"
-#include "display.h"
+#include "Display.h"
 #include "states/Playing.h"
 
 #include <memory>
@@ -11,16 +9,16 @@ Application::Application() {
 }
 
 void Application::runMainGameLoop() {
-    while(display::isOpen()){
-        display::clear();
+    while(Display::isOpen()){
+        Display::clear();
 
         //get input calculate situation render situation
         m_states.top()->input();
         m_states.top()->update();
         m_states.top()->draw();
 
-        display::update();
-        display::checkForClose();
+        Display::update();
+        Display::checkForClose();
     }
 }
 

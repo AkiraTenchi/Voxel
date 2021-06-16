@@ -1,5 +1,3 @@
-// Created by akira on 15-06-21.
-
 #ifndef VOXEL_APPLICATION_H
 #define VOXEL_APPLICATION_H
 

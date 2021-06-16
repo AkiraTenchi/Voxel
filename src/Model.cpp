@@ -1,5 +1,3 @@
-// Created by akira on 15-06-21.
-
 #include "Model.h"
 
 Model::Model(const std::vector<GLfloat>& vertexPositions) {

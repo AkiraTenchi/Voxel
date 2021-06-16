@@ -1,10 +1,8 @@
-// Created by akira on 16-06-21.
+#ifndef VOXEL_SHADERPROG_H
+#define VOXEL_SHADERPROG_H
 
 #include <GL/glew.h>
 #include <string>
-
-#ifndef VOXEL_SHADERPROG_H
-#define VOXEL_SHADERPROG_H
 
 namespace Shader{
     class ShaderProg{

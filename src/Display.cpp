@@ -1,12 +1,10 @@
-// Created by akira on 15-06-21.
-
-#include "display.h"
+#include "Display.h"
 
 #include <memory>
 #include <SFML/Graphics.hpp>
 #include <GL/glew.h>
 
-namespace display{
+namespace Display{
 
     constexpr static int WIDTH = 1280;
     constexpr static int HEIGHT = 720;

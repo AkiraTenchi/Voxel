@@ -1,9 +1,7 @@
-// Created by akira on 15-06-21.
-
 #ifndef VOXEL_DISPLAY_H
 #define VOXEL_DISPLAY_H
 
-namespace display{
+namespace Display{
     void init();
     void close();
 
