@@ -8,15 +8,13 @@ namespace Shader{
     class ShaderProg{
         public:
             ShaderProg(const std::string& vertexShaderFile, const std::string& fragmentShaderFile);
+            ~ShaderProg();
 
             void bind();
             void unbind();
 
         private:
             GLuint m_programID;
-
-            GLuint m_vertexShaderID;
-            GLuint m_fragmentShaderID;
     };
 }
 
