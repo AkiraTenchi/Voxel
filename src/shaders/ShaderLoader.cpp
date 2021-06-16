@@ -26,16 +26,16 @@ namespace Shader{
     }
 
     std::string getSource(const std::string sourceFile){
-        std::ifstream inFile ("Data/Shaders/" + sourceFile + ".glsl");
+        std::ifstream inFile ("../data/shaders/" + sourceFile + ".glsl");
         std::string source;
-        std::stringstream stringstream;
+        std::stringstream stringStream;
 
         if(!inFile.is_open()){
             throw std::runtime_error("Could not open " + sourceFile);
         }
 
-        stringstream<< inFile.rdbuf();
-        source = stringstream.str();
+        stringStream << inFile.rdbuf();
+        source = stringStream.str();
 
         return source;
     }

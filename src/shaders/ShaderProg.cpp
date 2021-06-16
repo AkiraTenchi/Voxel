@@ -18,4 +18,8 @@ namespace Shader{
     void ShaderProg::unbind() {
         glUseProgram(0);
     }
+
+    void ShaderProg::bindAttribute(GLuint location, const GLchar *name) {
+        glBindAttribLocation(m_programID, location, name);
+    }
 }

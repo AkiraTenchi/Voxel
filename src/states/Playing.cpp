@@ -25,5 +25,6 @@ namespace State{
         glDrawArrays(GL_TRIANGLES, 0, 6);
 
         m_model.unbind();
+        m_shader.bind();
     }
 }
