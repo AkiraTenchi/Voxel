@@ -5,13 +5,10 @@
 
 namespace Shader{
     class SimpleShader : public ShaderProg{
-        public:
-            SimpleShader();
-
-        private:
-            void bindAttributes() override;
-
-
+    public:
+        SimpleShader();
+    private:
+        void bindAttributes() override;
     };
 }
 

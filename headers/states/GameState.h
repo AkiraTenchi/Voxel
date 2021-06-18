@@ -5,16 +5,13 @@ class Application;
 
 namespace State{
     class GameState{
-        public:
-            GameState(Application& app);
-
-            virtual void input() = 0;
-            virtual void update() = 0;
-            virtual void draw() = 0;
-
-        protected:
-            Application* m_application;
-
+    public:
+        GameState(Application& app);
+        virtual void input() = 0;
+        virtual void update() = 0;
+        virtual void draw() = 0;
+    protected:
+        Application* m_application;
     };
 }
 
