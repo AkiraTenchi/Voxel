@@ -12,8 +12,11 @@ namespace Shader{
         void bind();
         void unbind();
     protected:
-        void bindAttribute(GLuint location, const GLchar* name);
-        virtual void bindAttributes() = 0;
+        virtual void getUniformLocations () = 0;
+
+        GLuint getID() const;
+
+        void loadFloat(GLuint location, float value);
     private:
         GLuint m_programID;
     };

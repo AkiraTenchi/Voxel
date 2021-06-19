@@ -7,8 +7,12 @@ namespace Shader{
     class SimpleShader : public ShaderProg{
     public:
         SimpleShader();
+
+        void setTime(float time);
     private:
-        void bindAttributes() override;
+        void getUniformLocations() override;
+
+        GLuint m_locationTime = 0;
     };
 }
 

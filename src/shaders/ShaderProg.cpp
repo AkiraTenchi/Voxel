@@ -2,6 +2,9 @@
 #include "shaders/ShaderLoader.h"
 
 namespace Shader{
+    /*
+     * Public
+     */
     ShaderProg::ShaderProg(const std::string &vertexShaderFile, const std::string &fragmentShaderFile) :
     m_programID (loadShader(vertexShaderFile, fragmentShaderFile)){
 
@@ -18,8 +21,14 @@ namespace Shader{
     void ShaderProg::unbind() {
         glUseProgram(0);
     }
+    /*
+     * Protected
+     */
+    GLuint ShaderProg::getID() const{
+        return m_programID;
+    }
 
-    void ShaderProg::bindAttribute(GLuint location, const GLchar *name) {
-        glBindAttribLocation(m_programID, location, name);
+    void ShaderProg::loadFloat(GLuint location, float value) {
+        glUniform1f(location, value);
     }
 }

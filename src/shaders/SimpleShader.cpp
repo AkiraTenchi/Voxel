@@ -1,12 +1,22 @@
 #include "shaders/SimpleShader.h"
 
 namespace Shader{
+    /*
+     * Public
+     */
     SimpleShader::SimpleShader() :
     ShaderProg("SimpleVertex", "SimpleFragment"){
-        bindAttributes();
+        getUniformLocations();
     }
 
-    void SimpleShader::bindAttributes() {
-        bindAttribute(0, "inVertexPosition");
+    void SimpleShader::setTime(float time) {
+        loadFloat(m_locationTime, time);
+    }
+
+    /*
+     * Private
+     */
+    void SimpleShader::getUniformLocations() {
+        m_locationTime = glGetUniformLocation(getID(), "time");
     }
 }
